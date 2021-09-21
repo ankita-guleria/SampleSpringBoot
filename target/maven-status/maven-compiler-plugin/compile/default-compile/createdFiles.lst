@@ -1,0 +1,5 @@
+com\sampleSpringBoot\Model\InventoryData.class
+com\sampleSpringBoot\Dao\InventoryDaoImpl.class
+com\sampleSpringBoot\Dao\InventoryDao.class
+com\sampleSpringBoot\Module\SampleSpringBootApplication.class
+com\sampleSpringBoot\RestEndPoint\InventoryDataController.class
