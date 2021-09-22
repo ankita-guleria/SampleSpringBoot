@@ -27,4 +27,39 @@ public class InventoryDaoImpl implements InventoryDao {
 		return (List<InventoryData>) entityManager.createQuery(hql).getResultList();
 	}
 
+	@Override
+	public long addInventoryData(InventoryData details) {
+		entityManager.persist(details);
+		entityManager.flush();
+		return details.getId();
+	}
+
+	@Override
+	public long updateInventory(InventoryData details) {
+		InventoryData detailsFromDB = fetchInventoryDataRecord(details.getId());
+		
+		detailsFromDB.setItemName(details.getItemName());
+		detailsFromDB.setMarketPrice(details.getMarketPrice());
+		detailsFromDB.setSize(details.getSize());
+		detailsFromDB.setDiscount(details.getDiscount());
+		
+		entityManager.flush();
+		return details.getId();
+		
+	}
+
+	@Override
+	public InventoryData fetchInventoryDataRecord(long id) {
+		InventoryData data = entityManager.find(InventoryData.class, id);
+		return data;
+
+	}
+
+	@Override
+	public int deleteInventoryData(Long id) {
+		InventoryData inventoryData = entityManager.find(InventoryData.class, id);
+		entityManager.remove(inventoryData);
+		return 1;
+	}
+
 }

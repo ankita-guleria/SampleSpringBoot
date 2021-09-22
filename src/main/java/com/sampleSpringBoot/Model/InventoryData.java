@@ -28,6 +28,10 @@ public class InventoryData {
 	private String itemName;
 	@Column(name = "marketPrice")
 	private Double marketPrice;
+	@Column(name = "size")
+	private String size;
+	@Column(name = "discount")
+	private Double discount;
 	
 	
 	public long getId() {
@@ -48,4 +52,18 @@ public class InventoryData {
 	public void setMarketPrice(Double marketPrice) {
 		this.marketPrice = marketPrice;
 	}
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	public Double getDiscount() {
+		return discount;
+	}
+	public void setDiscount(Double discount) {
+		this.discount = discount;
+	}
+	
+	
 }

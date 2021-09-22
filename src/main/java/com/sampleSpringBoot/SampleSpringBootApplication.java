@@ -1,4 +1,4 @@
-package com.sampleSpringBoot.Module;
+package com.sampleSpringBoot;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
